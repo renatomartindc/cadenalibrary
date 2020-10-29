@@ -1,0 +1,539 @@
+{
+    "contracts": {
+        "/Users/camilo/Documents/proyectos/cadena-library/contracts/test1/test1.sol": {
+            "Test": {
+                "abi": [
+                    {
+                        "constant": false,
+                        "inputs": [
+                            {
+                                "name": "param",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "emitEvent",
+                        "outputs": [],
+                        "payable": false,
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "constant": false,
+                        "inputs": [
+                            {
+                                "name": "param1",
+                                "type": "string"
+                            },
+                            {
+                                "name": "param2",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "emitEvent2",
+                        "outputs": [],
+                        "payable": false,
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": false,
+                                "name": "param",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "TestEvent",
+                        "type": "event"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": true,
+                                "name": "param1",
+                                "type": "string"
+                            },
+                            {
+                                "indexed": false,
+                                "name": "param2",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "TestEvent2",
+                        "type": "event"
+                    }
+                ],
+                "devdoc": {
+                    "methods": {}
+                },
+                "evm": {
+                    "bytecode": {
+                        "linkReferences": {},
+                        "object": "608060405234801561001057600080fd5b506102fb806100206000396000f30060806040526004361061004b5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663982296a881146100505780639abdd3b5146100ab575b600080fd5b34801561005c57600080fd5b506040805160206004803580820135601f81018490048402850184019095528484526100a99436949293602493928401919081908401838280828437509497506101429650505050505050565b005b3480156100b757600080fd5b506040805160206004803580820135601f81018490048402850184019095528484526100a994369492936024939284019190819084018382808284375050604080516020601f89358b018035918201839004830284018301909452808352979a9998810197919650918201945092508291508401838280828437509497506101de9650505050505050565b7fe75028ff36bb6473da3731a30e1aeeae9988e2415dba2c4e91e0357955065fba816040518080602001828103825283818151815260200191508051906020019080838360005b838110156101a1578181015183820152602001610189565b50505050905090810190601f1680156101ce5780820380516001836020036101000a031916815260200191505b509250505060405180910390a150565b816040518082805190602001908083835b6020831061020e5780518252601f1990920191602091820191016101ef565b51815160209384036101000a60001901801990921691161790526040805192909401829003822081835287518383015287519096507fb3a65a402a6c0efb49c17882119d860bfd1f7e5b48dee78510d9cba554a7128b95508794929350839283019185019080838360005b83811015610291578181015183820152602001610279565b50505050905090810190601f1680156102be5780820380516001836020036101000a031916815260200191505b509250505060405180910390a250505600a165627a7a723058206216ecc5b6555b79dcba1bf41b5eb5584d78e3620b257bcdc6a6d3c599250ec20029",
+                        "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH2 0x2FB DUP1 PUSH2 0x20 PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN STOP PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT PUSH2 0x4B JUMPI PUSH4 0xFFFFFFFF PUSH29 0x100000000000000000000000000000000000000000000000000000000 PUSH1 0x0 CALLDATALOAD DIV AND PUSH4 0x982296A8 DUP2 EQ PUSH2 0x50 JUMPI DUP1 PUSH4 0x9ABDD3B5 EQ PUSH2 0xAB JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST CALLVALUE DUP1 ISZERO PUSH2 0x5C JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x40 DUP1 MLOAD PUSH1 0x20 PUSH1 0x4 DUP1 CALLDATALOAD DUP1 DUP3 ADD CALLDATALOAD PUSH1 0x1F DUP2 ADD DUP5 SWAP1 DIV DUP5 MUL DUP6 ADD DUP5 ADD SWAP1 SWAP6 MSTORE DUP5 DUP5 MSTORE PUSH2 0xA9 SWAP5 CALLDATASIZE SWAP5 SWAP3 SWAP4 PUSH1 0x24 SWAP4 SWAP3 DUP5 ADD SWAP2 SWAP1 DUP2 SWAP1 DUP5 ADD DUP4 DUP3 DUP1 DUP3 DUP5 CALLDATACOPY POP SWAP5 SWAP8 POP PUSH2 0x142 SWAP7 POP POP POP POP POP POP POP JUMP JUMPDEST STOP JUMPDEST CALLVALUE DUP1 ISZERO PUSH2 0xB7 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x40 DUP1 MLOAD PUSH1 0x20 PUSH1 0x4 DUP1 CALLDATALOAD DUP1 DUP3 ADD CALLDATALOAD PUSH1 0x1F DUP2 ADD DUP5 SWAP1 DIV DUP5 MUL DUP6 ADD DUP5 ADD SWAP1 SWAP6 MSTORE DUP5 DUP5 MSTORE PUSH2 0xA9 SWAP5 CALLDATASIZE SWAP5 SWAP3 SWAP4 PUSH1 0x24 SWAP4 SWAP3 DUP5 ADD SWAP2 SWAP1 DUP2 SWAP1 DUP5 ADD DUP4 DUP3 DUP1 DUP3 DUP5 CALLDATACOPY POP POP PUSH1 0x40 DUP1 MLOAD PUSH1 0x20 PUSH1 0x1F DUP10 CALLDATALOAD DUP12 ADD DUP1 CALLDATALOAD SWAP2 DUP3 ADD DUP4 SWAP1 DIV DUP4 MUL DUP5 ADD DUP4 ADD SWAP1 SWAP5 MSTORE DUP1 DUP4 MSTORE SWAP8 SWAP11 SWAP10 SWAP9 DUP2 ADD SWAP8 SWAP2 SWAP7 POP SWAP2 DUP3 ADD SWAP5 POP SWAP3 POP DUP3 SWAP2 POP DUP5 ADD DUP4 DUP3 DUP1 DUP3 DUP5 CALLDATACOPY POP SWAP5 SWAP8 POP PUSH2 0x1DE SWAP7 POP POP POP POP POP POP POP JUMP JUMPDEST PUSH32 0xE75028FF36BB6473DA3731A30E1AEEAE9988E2415DBA2C4E91E0357955065FBA DUP2 PUSH1 0x40 MLOAD DUP1 DUP1 PUSH1 0x20 ADD DUP3 DUP2 SUB DUP3 MSTORE DUP4 DUP2 DUP2 MLOAD DUP2 MSTORE PUSH1 0x20 ADD SWAP2 POP DUP1 MLOAD SWAP1 PUSH1 0x20 ADD SWAP1 DUP1 DUP4 DUP4 PUSH1 0x0 JUMPDEST DUP4 DUP2 LT ISZERO PUSH2 0x1A1 JUMPI DUP2 DUP2 ADD MLOAD DUP4 DUP3 ADD MSTORE PUSH1 0x20 ADD PUSH2 0x189 JUMP JUMPDEST POP POP POP POP SWAP1 POP SWAP1 DUP2 ADD SWAP1 PUSH1 0x1F AND DUP1 ISZERO PUSH2 0x1CE JUMPI DUP1 DUP3 SUB DUP1 MLOAD PUSH1 0x1 DUP4 PUSH1 0x20 SUB PUSH2 0x100 EXP SUB NOT AND DUP2 MSTORE PUSH1 0x20 ADD SWAP2 POP JUMPDEST POP SWAP3 POP POP POP PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 LOG1 POP JUMP JUMPDEST DUP2 PUSH1 0x40 MLOAD DUP1 DUP3 DUP1 MLOAD SWAP1 PUSH1 0x20 ADD SWAP1 DUP1 DUP4 DUP4 JUMPDEST PUSH1 0x20 DUP4 LT PUSH2 0x20E JUMPI DUP1 MLOAD DUP3 MSTORE PUSH1 0x1F NOT SWAP1 SWAP3 ADD SWAP2 PUSH1 0x20 SWAP2 DUP3 ADD SWAP2 ADD PUSH2 0x1EF JUMP JUMPDEST MLOAD DUP2 MLOAD PUSH1 0x20 SWAP4 DUP5 SUB PUSH2 0x100 EXP PUSH1 0x0 NOT ADD DUP1 NOT SWAP1 SWAP3 AND SWAP2 AND OR SWAP1 MSTORE PUSH1 0x40 DUP1 MLOAD SWAP3 SWAP1 SWAP5 ADD DUP3 SWAP1 SUB DUP3 KECCAK256 DUP2 DUP4 MSTORE DUP8 MLOAD DUP4 DUP4 ADD MSTORE DUP8 MLOAD SWAP1 SWAP7 POP PUSH32 0xB3A65A402A6C0EFB49C17882119D860BFD1F7E5B48DEE78510D9CBA554A7128B SWAP6 POP DUP8 SWAP5 SWAP3 SWAP4 POP DUP4 SWAP3 DUP4 ADD SWAP2 DUP6 ADD SWAP1 DUP1 DUP4 DUP4 PUSH1 0x0 JUMPDEST DUP4 DUP2 LT ISZERO PUSH2 0x291 JUMPI DUP2 DUP2 ADD MLOAD DUP4 DUP3 ADD MSTORE PUSH1 0x20 ADD PUSH2 0x279 JUMP JUMPDEST POP POP POP POP SWAP1 POP SWAP1 DUP2 ADD SWAP1 PUSH1 0x1F AND DUP1 ISZERO PUSH2 0x2BE JUMPI DUP1 DUP3 SUB DUP1 MLOAD PUSH1 0x1 DUP4 PUSH1 0x20 SUB PUSH2 0x100 EXP SUB NOT AND DUP2 MSTORE PUSH1 0x20 ADD SWAP2 POP JUMPDEST POP SWAP3 POP POP POP PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 LOG2 POP POP JUMP STOP LOG1 PUSH6 0x627A7A723058 KECCAK256 PUSH3 0x16ECC5 0xb6 SSTORE JUMPDEST PUSH26 0xDCBA1BF41B5EB5584D78E3620B257BCDC6A6D3C599250EC20029 ",
+                        "sourceMap": "26:320:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:320:0;;;;;;;"
+                    },
+                    "deployedBytecode": {
+                        "linkReferences": {},
+                        "object": "60806040526004361061004b5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663982296a881146100505780639abdd3b5146100ab575b600080fd5b34801561005c57600080fd5b506040805160206004803580820135601f81018490048402850184019095528484526100a99436949293602493928401919081908401838280828437509497506101429650505050505050565b005b3480156100b757600080fd5b506040805160206004803580820135601f81018490048402850184019095528484526100a994369492936024939284019190819084018382808284375050604080516020601f89358b018035918201839004830284018301909452808352979a9998810197919650918201945092508291508401838280828437509497506101de9650505050505050565b7fe75028ff36bb6473da3731a30e1aeeae9988e2415dba2c4e91e0357955065fba816040518080602001828103825283818151815260200191508051906020019080838360005b838110156101a1578181015183820152602001610189565b50505050905090810190601f1680156101ce5780820380516001836020036101000a031916815260200191505b509250505060405180910390a150565b816040518082805190602001908083835b6020831061020e5780518252601f1990920191602091820191016101ef565b51815160209384036101000a60001901801990921691161790526040805192909401829003822081835287518383015287519096507fb3a65a402a6c0efb49c17882119d860bfd1f7e5b48dee78510d9cba554a7128b95508794929350839283019185019080838360005b83811015610291578181015183820152602001610279565b50505050905090810190601f1680156102be5780820380516001836020036101000a031916815260200191505b509250505060405180910390a250505600a165627a7a723058206216ecc5b6555b79dcba1bf41b5eb5584d78e3620b257bcdc6a6d3c599250ec20029",
+                        "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT PUSH2 0x4B JUMPI PUSH4 0xFFFFFFFF PUSH29 0x100000000000000000000000000000000000000000000000000000000 PUSH1 0x0 CALLDATALOAD DIV AND PUSH4 0x982296A8 DUP2 EQ PUSH2 0x50 JUMPI DUP1 PUSH4 0x9ABDD3B5 EQ PUSH2 0xAB JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST CALLVALUE DUP1 ISZERO PUSH2 0x5C JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x40 DUP1 MLOAD PUSH1 0x20 PUSH1 0x4 DUP1 CALLDATALOAD DUP1 DUP3 ADD CALLDATALOAD PUSH1 0x1F DUP2 ADD DUP5 SWAP1 DIV DUP5 MUL DUP6 ADD DUP5 ADD SWAP1 SWAP6 MSTORE DUP5 DUP5 MSTORE PUSH2 0xA9 SWAP5 CALLDATASIZE SWAP5 SWAP3 SWAP4 PUSH1 0x24 SWAP4 SWAP3 DUP5 ADD SWAP2 SWAP1 DUP2 SWAP1 DUP5 ADD DUP4 DUP3 DUP1 DUP3 DUP5 CALLDATACOPY POP SWAP5 SWAP8 POP PUSH2 0x142 SWAP7 POP POP POP POP POP POP POP JUMP JUMPDEST STOP JUMPDEST CALLVALUE DUP1 ISZERO PUSH2 0xB7 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x40 DUP1 MLOAD PUSH1 0x20 PUSH1 0x4 DUP1 CALLDATALOAD DUP1 DUP3 ADD CALLDATALOAD PUSH1 0x1F DUP2 ADD DUP5 SWAP1 DIV DUP5 MUL DUP6 ADD DUP5 ADD SWAP1 SWAP6 MSTORE DUP5 DUP5 MSTORE PUSH2 0xA9 SWAP5 CALLDATASIZE SWAP5 SWAP3 SWAP4 PUSH1 0x24 SWAP4 SWAP3 DUP5 ADD SWAP2 SWAP1 DUP2 SWAP1 DUP5 ADD DUP4 DUP3 DUP1 DUP3 DUP5 CALLDATACOPY POP POP PUSH1 0x40 DUP1 MLOAD PUSH1 0x20 PUSH1 0x1F DUP10 CALLDATALOAD DUP12 ADD DUP1 CALLDATALOAD SWAP2 DUP3 ADD DUP4 SWAP1 DIV DUP4 MUL DUP5 ADD DUP4 ADD SWAP1 SWAP5 MSTORE DUP1 DUP4 MSTORE SWAP8 SWAP11 SWAP10 SWAP9 DUP2 ADD SWAP8 SWAP2 SWAP7 POP SWAP2 DUP3 ADD SWAP5 POP SWAP3 POP DUP3 SWAP2 POP DUP5 ADD DUP4 DUP3 DUP1 DUP3 DUP5 CALLDATACOPY POP SWAP5 SWAP8 POP PUSH2 0x1DE SWAP7 POP POP POP POP POP POP POP JUMP JUMPDEST PUSH32 0xE75028FF36BB6473DA3731A30E1AEEAE9988E2415DBA2C4E91E0357955065FBA DUP2 PUSH1 0x40 MLOAD DUP1 DUP1 PUSH1 0x20 ADD DUP3 DUP2 SUB DUP3 MSTORE DUP4 DUP2 DUP2 MLOAD DUP2 MSTORE PUSH1 0x20 ADD SWAP2 POP DUP1 MLOAD SWAP1 PUSH1 0x20 ADD SWAP1 DUP1 DUP4 DUP4 PUSH1 0x0 JUMPDEST DUP4 DUP2 LT ISZERO PUSH2 0x1A1 JUMPI DUP2 DUP2 ADD MLOAD DUP4 DUP3 ADD MSTORE PUSH1 0x20 ADD PUSH2 0x189 JUMP JUMPDEST POP POP POP POP SWAP1 POP SWAP1 DUP2 ADD SWAP1 PUSH1 0x1F AND DUP1 ISZERO PUSH2 0x1CE JUMPI DUP1 DUP3 SUB DUP1 MLOAD PUSH1 0x1 DUP4 PUSH1 0x20 SUB PUSH2 0x100 EXP SUB NOT AND DUP2 MSTORE PUSH1 0x20 ADD SWAP2 POP JUMPDEST POP SWAP3 POP POP POP PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 LOG1 POP JUMP JUMPDEST DUP2 PUSH1 0x40 MLOAD DUP1 DUP3 DUP1 MLOAD SWAP1 PUSH1 0x20 ADD SWAP1 DUP1 DUP4 DUP4 JUMPDEST PUSH1 0x20 DUP4 LT PUSH2 0x20E JUMPI DUP1 MLOAD DUP3 MSTORE PUSH1 0x1F NOT SWAP1 SWAP3 ADD SWAP2 PUSH1 0x20 SWAP2 DUP3 ADD SWAP2 ADD PUSH2 0x1EF JUMP JUMPDEST MLOAD DUP2 MLOAD PUSH1 0x20 SWAP4 DUP5 SUB PUSH2 0x100 EXP PUSH1 0x0 NOT ADD DUP1 NOT SWAP1 SWAP3 AND SWAP2 AND OR SWAP1 MSTORE PUSH1 0x40 DUP1 MLOAD SWAP3 SWAP1 SWAP5 ADD DUP3 SWAP1 SUB DUP3 KECCAK256 DUP2 DUP4 MSTORE DUP8 MLOAD DUP4 DUP4 ADD MSTORE DUP8 MLOAD SWAP1 SWAP7 POP PUSH32 0xB3A65A402A6C0EFB49C17882119D860BFD1F7E5B48DEE78510D9CBA554A7128B SWAP6 POP DUP8 SWAP5 SWAP3 SWAP4 POP DUP4 SWAP3 DUP4 ADD SWAP2 DUP6 ADD SWAP1 DUP1 DUP4 DUP4 PUSH1 0x0 JUMPDEST DUP4 DUP2 LT ISZERO PUSH2 0x291 JUMPI DUP2 DUP2 ADD MLOAD DUP4 DUP3 ADD MSTORE PUSH1 0x20 ADD PUSH2 0x279 JUMP JUMPDEST POP POP POP POP SWAP1 POP SWAP1 DUP2 ADD SWAP1 PUSH1 0x1F AND DUP1 ISZERO PUSH2 0x2BE JUMPI DUP1 DUP3 SUB DUP1 MLOAD PUSH1 0x1 DUP4 PUSH1 0x20 SUB PUSH2 0x100 EXP SUB NOT AND DUP2 MSTORE PUSH1 0x20 ADD SWAP2 POP JUMPDEST POP SWAP3 POP POP POP PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 LOG2 POP POP JUMP STOP LOG1 PUSH6 0x627A7A723058 KECCAK256 PUSH3 0x16ECC5 0xb6 SSTORE JUMPDEST PUSH26 0xDCBA1BF41B5EB5584D78E3620B257BCDC6A6D3C599250EC20029 ",
+                        "sourceMap": "26:320:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;151:78;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;151:78:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;151:78:0;;-1:-1:-1;151:78:0;;-1:-1:-1;;;;;;;151:78:0;;;239:105;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;239:105:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;239:105:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;239:105:0;;;;-1:-1:-1;239:105:0;-1:-1:-1;239:105:0;;-1:-1:-1;239:105:0;;;;;;;;-1:-1:-1;239:105:0;;-1:-1:-1;239:105:0;;-1:-1:-1;;;;;;;239:105:0;151:78;206:16;216:5;206:16;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;206:16:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;151:78;:::o;239:105::-;322:6;311:26;;;;;;;;;;;;;36:153:-1;66:2;58:11;;36:153;;176:10;;164:23;;-1:-1;;139:12;;;;98:2;89:12;;;;114;36:153;;;299:10;344;;263:2;259:12;;;254:3;250:22;-1:-1;;246:30;311:9;;295:26;;;340:21;;377:20;365:33;;311:26:0;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;311:26:0;;-1:-1:-1;311:26:0;;;;-1:-1:-1;311:26:0;;;;;;;;;;;-1:-1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;311:26:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;239:105;;:::o"
+                    },
+                    "gasEstimates": {
+                        "creation": {
+                            "codeDepositCost": "152600",
+                            "executionCost": "196",
+                            "totalCost": "152796"
+                        },
+                        "external": {
+                            "emitEvent(string)": "infinite",
+                            "emitEvent2(string,string)": "infinite"
+                        }
+                    },
+                    "methodIdentifiers": {
+                        "emitEvent(string)": "982296a8",
+                        "emitEvent2(string,string)": "9abdd3b5"
+                    }
+                },
+                "metadata": "{\"compiler\":{\"version\":\"0.4.26+commit.4563c3fc\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"param\",\"type\":\"string\"}],\"name\":\"emitEvent\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"param1\",\"type\":\"string\"},{\"name\":\"param2\",\"type\":\"string\"}],\"name\":\"emitEvent2\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"param\",\"type\":\"string\"}],\"name\":\"TestEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"param1\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"param2\",\"type\":\"string\"}],\"name\":\"TestEvent2\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/camilo/Documents/proyectos/cadena-library/contracts/test1/test1.sol\":\"Test\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/camilo/Documents/proyectos/cadena-library/contracts/test1/test1.sol\":{\"keccak256\":\"0x7e4d07467bd3984cb457562822c3bbe753263a6fca0304e3a2cb53c8c5d1a528\",\"urls\":[\"bzzr://b2ca7469c335c1b7f75415b5499e6df1ed23a6eebca6a4411b7fce653bf8b03c\"]}},\"version\":1}",
+                "userdoc": {
+                    "methods": {}
+                }
+            }
+        }
+    },
+    "sources": {
+        "/Users/camilo/Documents/proyectos/cadena-library/contracts/test1/test1.sol": {
+            "ast": {
+                "absolutePath": "/Users/camilo/Documents/proyectos/cadena-library/contracts/test1/test1.sol",
+                "exportedSymbols": {
+                    "Test": [
+                        35
+                    ]
+                },
+                "id": 36,
+                "nodeType": "SourceUnit",
+                "nodes": [
+                    {
+                        "id": 1,
+                        "literals": [
+                            "solidity",
+                            "^",
+                            "0.4",
+                            ".24"
+                        ],
+                        "nodeType": "PragmaDirective",
+                        "src": "0:24:0"
+                    },
+                    {
+                        "baseContracts": [],
+                        "contractDependencies": [],
+                        "contractKind": "contract",
+                        "documentation": null,
+                        "fullyImplemented": true,
+                        "id": 35,
+                        "linearizedBaseContracts": [
+                            35
+                        ],
+                        "name": "Test",
+                        "nodeType": "ContractDefinition",
+                        "nodes": [
+                            {
+                                "anonymous": false,
+                                "documentation": null,
+                                "id": 5,
+                                "name": "TestEvent",
+                                "nodeType": "EventDefinition",
+                                "parameters": {
+                                    "id": 4,
+                                    "nodeType": "ParameterList",
+                                    "parameters": [
+                                        {
+                                            "constant": false,
+                                            "id": 3,
+                                            "indexed": false,
+                                            "name": "param",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 5,
+                                            "src": "67:12:0",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_string_memory_ptr",
+                                                "typeString": "string"
+                                            },
+                                            "typeName": {
+                                                "id": 2,
+                                                "name": "string",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "67:6:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_string_storage_ptr",
+                                                    "typeString": "string"
+                                                }
+                                            },
+                                            "value": null,
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "src": "66:14:0"
+                                },
+                                "src": "51:30:0"
+                            },
+                            {
+                                "anonymous": false,
+                                "documentation": null,
+                                "id": 11,
+                                "name": "TestEvent2",
+                                "nodeType": "EventDefinition",
+                                "parameters": {
+                                    "id": 10,
+                                    "nodeType": "ParameterList",
+                                    "parameters": [
+                                        {
+                                            "constant": false,
+                                            "id": 7,
+                                            "indexed": true,
+                                            "name": "param1",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 11,
+                                            "src": "103:21:0",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_string_memory_ptr",
+                                                "typeString": "string"
+                                            },
+                                            "typeName": {
+                                                "id": 6,
+                                                "name": "string",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "103:6:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_string_storage_ptr",
+                                                    "typeString": "string"
+                                                }
+                                            },
+                                            "value": null,
+                                            "visibility": "internal"
+                                        },
+                                        {
+                                            "constant": false,
+                                            "id": 9,
+                                            "indexed": false,
+                                            "name": "param2",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 11,
+                                            "src": "126:13:0",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_string_memory_ptr",
+                                                "typeString": "string"
+                                            },
+                                            "typeName": {
+                                                "id": 8,
+                                                "name": "string",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "126:6:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_string_storage_ptr",
+                                                    "typeString": "string"
+                                                }
+                                            },
+                                            "value": null,
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "src": "102:38:0"
+                                },
+                                "src": "86:55:0"
+                            },
+                            {
+                                "body": {
+                                    "id": 20,
+                                    "nodeType": "Block",
+                                    "src": "191:38:0",
+                                    "statements": [
+                                        {
+                                            "eventCall": {
+                                                "argumentTypes": null,
+                                                "arguments": [
+                                                    {
+                                                        "argumentTypes": null,
+                                                        "id": 17,
+                                                        "name": "param",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 13,
+                                                        "src": "216:5:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_string_memory_ptr",
+                                                            "typeString": "string memory"
+                                                        }
+                                                    }
+                                                ],
+                                                "expression": {
+                                                    "argumentTypes": [
+                                                        {
+                                                            "typeIdentifier": "t_string_memory_ptr",
+                                                            "typeString": "string memory"
+                                                        }
+                                                    ],
+                                                    "id": 16,
+                                                    "name": "TestEvent",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 5,
+                                                    "src": "206:9:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
+                                                        "typeString": "function (string memory)"
+                                                    }
+                                                },
+                                                "id": 18,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "kind": "functionCall",
+                                                "lValueRequested": false,
+                                                "names": [],
+                                                "nodeType": "FunctionCall",
+                                                "src": "206:16:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_tuple$__$",
+                                                    "typeString": "tuple()"
+                                                }
+                                            },
+                                            "id": 19,
+                                            "nodeType": "EmitStatement",
+                                            "src": "201:21:0"
+                                        }
+                                    ]
+                                },
+                                "documentation": null,
+                                "id": 21,
+                                "implemented": true,
+                                "isConstructor": false,
+                                "isDeclaredConst": false,
+                                "modifiers": [],
+                                "name": "emitEvent",
+                                "nodeType": "FunctionDefinition",
+                                "parameters": {
+                                    "id": 14,
+                                    "nodeType": "ParameterList",
+                                    "parameters": [
+                                        {
+                                            "constant": false,
+                                            "id": 13,
+                                            "name": "param",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 21,
+                                            "src": "170:12:0",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_string_memory_ptr",
+                                                "typeString": "string"
+                                            },
+                                            "typeName": {
+                                                "id": 12,
+                                                "name": "string",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "170:6:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_string_storage_ptr",
+                                                    "typeString": "string"
+                                                }
+                                            },
+                                            "value": null,
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "src": "169:14:0"
+                                },
+                                "payable": false,
+                                "returnParameters": {
+                                    "id": 15,
+                                    "nodeType": "ParameterList",
+                                    "parameters": [],
+                                    "src": "191:0:0"
+                                },
+                                "scope": 35,
+                                "src": "151:78:0",
+                                "stateMutability": "nonpayable",
+                                "superFunction": null,
+                                "visibility": "public"
+                            },
+                            {
+                                "body": {
+                                    "id": 33,
+                                    "nodeType": "Block",
+                                    "src": "296:48:0",
+                                    "statements": [
+                                        {
+                                            "eventCall": {
+                                                "argumentTypes": null,
+                                                "arguments": [
+                                                    {
+                                                        "argumentTypes": null,
+                                                        "id": 29,
+                                                        "name": "param1",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 23,
+                                                        "src": "322:6:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_string_memory_ptr",
+                                                            "typeString": "string memory"
+                                                        }
+                                                    },
+                                                    {
+                                                        "argumentTypes": null,
+                                                        "id": 30,
+                                                        "name": "param2",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 25,
+                                                        "src": "330:6:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_string_memory_ptr",
+                                                            "typeString": "string memory"
+                                                        }
+                                                    }
+                                                ],
+                                                "expression": {
+                                                    "argumentTypes": [
+                                                        {
+                                                            "typeIdentifier": "t_string_memory_ptr",
+                                                            "typeString": "string memory"
+                                                        },
+                                                        {
+                                                            "typeIdentifier": "t_string_memory_ptr",
+                                                            "typeString": "string memory"
+                                                        }
+                                                    ],
+                                                    "id": 28,
+                                                    "name": "TestEvent2",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 11,
+                                                    "src": "311:10:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
+                                                        "typeString": "function (string memory,string memory)"
+                                                    }
+                                                },
+                                                "id": 31,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "kind": "functionCall",
+                                                "lValueRequested": false,
+                                                "names": [],
+                                                "nodeType": "FunctionCall",
+                                                "src": "311:26:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_tuple$__$",
+                                                    "typeString": "tuple()"
+                                                }
+                                            },
+                                            "id": 32,
+                                            "nodeType": "EmitStatement",
+                                            "src": "306:31:0"
+                                        }
+                                    ]
+                                },
+                                "documentation": null,
+                                "id": 34,
+                                "implemented": true,
+                                "isConstructor": false,
+                                "isDeclaredConst": false,
+                                "modifiers": [],
+                                "name": "emitEvent2",
+                                "nodeType": "FunctionDefinition",
+                                "parameters": {
+                                    "id": 26,
+                                    "nodeType": "ParameterList",
+                                    "parameters": [
+                                        {
+                                            "constant": false,
+                                            "id": 23,
+                                            "name": "param1",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 34,
+                                            "src": "259:13:0",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_string_memory_ptr",
+                                                "typeString": "string"
+                                            },
+                                            "typeName": {
+                                                "id": 22,
+                                                "name": "string",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "259:6:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_string_storage_ptr",
+                                                    "typeString": "string"
+                                                }
+                                            },
+                                            "value": null,
+                                            "visibility": "internal"
+                                        },
+                                        {
+                                            "constant": false,
+                                            "id": 25,
+                                            "name": "param2",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 34,
+                                            "src": "274:13:0",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_string_memory_ptr",
+                                                "typeString": "string"
+                                            },
+                                            "typeName": {
+                                                "id": 24,
+                                                "name": "string",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "274:6:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_string_storage_ptr",
+                                                    "typeString": "string"
+                                                }
+                                            },
+                                            "value": null,
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "src": "258:30:0"
+                                },
+                                "payable": false,
+                                "returnParameters": {
+                                    "id": 27,
+                                    "nodeType": "ParameterList",
+                                    "parameters": [],
+                                    "src": "296:0:0"
+                                },
+                                "scope": 35,
+                                "src": "239:105:0",
+                                "stateMutability": "nonpayable",
+                                "superFunction": null,
+                                "visibility": "public"
+                            }
+                        ],
+                        "scope": 36,
+                        "src": "26:320:0"
+                    }
+                ],
+                "src": "0:346:0"
+            },
+            "id": 0
+        }
+    }
+}

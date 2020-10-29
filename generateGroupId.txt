@@ -1,0 +1,15 @@
+{
+    "jsonrpc": "2.0",
+    "method": "priv_createPrivacyGroup",
+    "params": [
+        {
+            "addresses": [
+                          "ORION_PUBKEY_ADUANA_A",
+            			"ORION_PUBKEY_ADUANA_B"
+            ],
+            "name": "Generate Group ID",
+            "description": "Deploy generate Group ID for node ORION"
+        }
+    ],
+    "id": 1
+}

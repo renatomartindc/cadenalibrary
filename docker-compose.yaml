@@ -1,0 +1,232 @@
+version: '3'
+
+services:
+
+  elasticsearch:
+    image: elasticsearch:6.4.0
+    container_name: elasticsearch
+    environment:
+      - "cluster.name=elasticsearch"
+      - "discovery.type=single-node"
+      - "ES_JAVA_OPTS=-Xms1024m -Xmx4096m"
+    volumes:
+      - ../elkdata/elasticsearch/plugins:/usr/share/elasticsearch/plugins
+      - ../elkdata/elasticsearch/data:/usr/share/elasticsearch/data
+    expose:
+      - "9200"
+    networks:
+      - backend
+ 
+  kibana:
+    image: kibana:6.4.0
+    container_name: kibana
+    links:
+      - elasticsearch:es 
+    depends_on:
+      - elasticsearch 
+    environment:
+      - "elasticsearch.hosts=http://elasticsearch:9200" 
+    ports:
+      - "5601:5601"
+    networks:
+      - backend
+ 
+  logstash:
+    image: logstash:6.4.0
+    container_name: logstash
+    volumes:
+      - ../elkdata/logstash/springboot-logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    depends_on:
+      - elasticsearch
+    expose:
+      - "4560"
+    networks:
+      - backend
+  redis:
+    image: redis
+    container_name: redis    
+    hostname: redis
+    expose:
+      - "6379"
+    command: [ "redis-server", "--protected-mode", "no" ]
+    restart: always
+    networks:
+      - backend
+    volumes:
+      - ../data/redis:/data
+
+  mongodb:
+    container_name: mongodb
+    build:
+      context: mongodb/
+      dockerfile: Dockerfile
+    image: mongodb
+    hostname: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    networks:
+      - backend
+    volumes:
+      - ../data/mongodata:/data/db
+      - ../data/mongoconfig:/data/configdb
+
+  ms-parameter:
+    container_name: ms-parameter
+    image: proyectocadena/ms-parameter:0.0.1
+    hostname: ms-parameter
+    environment:
+      - PORT_SERVER=8083
+      - CONEXION_MONGO=mongodb://user-cadena:Rktj11KVEzU1Xrb5@mongodb/cadenadb
+    restart: always
+    expose:
+      - "8083"
+    networks:
+      - backend
+    depends_on:
+      - mongodb
+
+
+  ms-user:
+    container_name: ms-user
+    image: proyectocadena/ms-user:0.0.1
+    environment:
+      - PORT_SERVER=8085
+      - CONEXION_MONGO=mongodb://user-cadena:Rktj11KVEzU1Xrb5@mongodb/cadenadb
+      - SECRET=mysecret
+      - ITERATION=33
+      - KEY_LENGTH=256
+      - MS-NOTIFY=http://ms-notify:8082/
+      - BLOCKCHAIN_SERVER=https://IP_NODE_BESU
+      - PRIVATE_KEY=PASTE_PRIVATE_KEY
+      - CONTRACT_ADDRESS_IDENTITY_MANAGER=0xa6b4540a2bfbe8663caa78027c83d0dcb1b7c837
+      - CONTRACT_ADDRESS_AEO_MANAGER=PASTE_AEO_MANAGER
+
+
+    restart: always
+    expose:
+      - "8085"
+    networks:
+      - backend
+    depends_on:
+      - mongodb
+
+
+  ms-notify:
+    container_name: ms-notify
+    image: proyectocadena/ms-notify:0.0.1
+    hostname: ms-notify
+    environment:
+      - PORT_SERVER=8082
+      - MAILUSERNAME=jeffersonbalcazarg@gmail.com
+      - MAILPASSWORD=Jebaga92@123
+      - MAILPORT=587
+      - MAILFROM=Jebaga92@gmail.com
+      - MAILHOST=smtp.gmail.com
+      - RHOST=redis
+      - RPORT=6379
+      - URLATTEMPTPASSWORD=https://cadenaco-frontend.mytrust.id/home/users
+      - URLCOMPLETEPASSWORD=https://cadenaco-frontend.mytrust.id/update-password
+      - URLUPDATEUSER=https://cadenaco-frontend.mytrust.id/home/users
+      - URLFORGETPASSWORD=https://cadenaco-frontend.mytrust.id/update-password
+      - URLCHANGEPASSWORD=https://cadenaco-frontend.mytrust.id/home/users
+      - URLINVITATIONUSER=https://cadenaco-frontend.mytrust.id/update-password
+      - URLUPDATESTATEUSER=https://cadenaco-frontend.mytrust.id/home/users
+      - URLOEA=https://cadenaco-frontend.mytrust.id/home/certificates
+      - LOGO_ADUANA=CO.jpg
+      - LOGSTASH_SERVER=logstash:4560
+    restart: always
+    expose:
+      - "8082"
+    networks:
+      - backend
+    depends_on:
+      - redis
+      - mongodb
+           
+  ms-certificate:
+    container_name: ms-certificate
+    image: proyectocadena/ms-certificate:0.0.1
+    hostname: ms-certificate
+    environment:
+      - PORT_SERVER=8081
+      - CONEXION_MONGO=mongodb://user-cadena:Rktj11KVEzU1Xrb5@mongodb/cadenadb
+      - MS-NOTIFY=http://ms-notify:8082/
+      - BLOCKCHAIN_SERVER=https://IP_NODE_BESU
+      - PRIVATE_KEY=PASTE_PRIVATE_KEY
+      - ADDRESS=PASTE_ADDRESS_PUBLIC_ADUANA
+      - CONTRACT_ADDRESS_AEO_MANAGER=PASTE_AEO_MANAGER
+      - CONTRACT_ADDRESS_VERIFICATION_REGISTRY=0x9f8c1e196F5696e014F4d1E4961B92db866BE271
+      - CONTRACT_ADDRESS_IDENTITY_MANAGER=0xa6b4540a2bfbe8663caa78027c83d0dcb1b7c837
+      - CONTRACT_ADDRESS_PROXY_CUSTOM=PASTE_IDENTITY_ADUANA
+      - CONTRACT_ADDRESS_RMA=PASTE_ADDRESS_ADUANA_1,PASTE_ADDRESS_ADUANA_2,PASTE_ADDRESS_ADUANA_3
+      - COUNTRIES=MX,PE,CO
+      - ADDRESS_OTHER_NODE=PASTE_ADDRESS_PUBLIC_ADUANA_1,PASTE_ADDRESS_PUBLIC_ADUANA_2,PASTE_ADDRESS_PUBLIC_ADUANA_3
+      - GROUP_ID=PASTE_GROUP_ID_1,PASTE_GROUP_ID_2,PASTE_GROUP_ID_3
+      - FROM_NODE=PASTE_FROM_NODE
+      - URL_MNID=https://35.243.210.53/api
+      - NETWORK_ID=0x9e551
+      - TOTAL_PATH=https://cadenaco-backend.mytrust.id/ms-certificate
+      - FILE_PATH=/data/pathstorage/document
+    restart: always 
+    expose:
+      - "8081"
+    networks:
+      - backend
+    volumes:
+      - ../data/pathstorage/document:/data/pathstorage/document
+    depends_on:
+      - mongodb
+
+
+  ms-apigateway:
+    container_name: ms-apigateway
+    image: proyectocadena/ms-apigateway:0.0.2
+    hostname: ms-apigateway
+    environment:
+      - PORT_SERVER=8090
+      - CONEXION_MONGO=mongodb://user-cadena:Rktj11KVEzU1Xrb5@mongodb/cadenadb
+      - RHOST=redis
+      - MS-NOTIFY=http://ms-notify:8082/
+    restart: always
+    ports:
+      - "8090:8090"
+    networks:
+      - backend
+    depends_on:
+      - redis
+      - ms-parameter
+      - ms-notify
+      - ms-user
+      - mongodb
+
+  app-cadena:
+    container_name: app-cadena
+    image: proyectocadena/webapp-cadenatemp:0.0.6
+    hostname: app-cadena
+    expose:
+      - "80"
+    networks:
+      - frontend
+ 
+  nginx:
+    container_name: nginx
+    build:
+      context: cadena-ngnix/
+      dockerfile: Dockerfile
+    image: nginx
+    hostname: nginx
+    ports:
+      - "443:443"
+    restart: always
+    networks:
+      - frontend
+      - backend
+    depends_on:
+      - ms-apigateway
+      - app-cadena
+
+networks:
+  backend:
+  frontend:
+
